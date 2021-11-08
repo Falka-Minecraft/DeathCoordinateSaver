@@ -32,7 +32,6 @@ public class PlayerEvents implements Listener {
             plugin.getConfig().set("Users." + player.getUniqueId()+".Death" + lastId + ".Y",y);
             plugin.getConfig().set("Users." + player.getUniqueId()+".Death" + lastId + ".Z",z);
             plugin.saveConfig();
-
         }
     }
 }

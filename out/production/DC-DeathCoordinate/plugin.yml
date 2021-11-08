@@ -3,3 +3,7 @@ main: com.Feshior.DeathCoordinate.DeathCoordinate
 version: 1.0
 author: Feshior
 api-version: 1.17
+commands:
+  getDeaths:
+    description: Command that return all player deaths coordinates
+    usage: /getDeaths

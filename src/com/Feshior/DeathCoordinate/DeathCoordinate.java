@@ -1,5 +1,6 @@
 package com.Feshior.DeathCoordinate;
 
+import com.Feshior.DeathCoordinate.commands.getDeathsCommand;
 import com.Feshior.DeathCoordinate.events.PlayerEvents;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
@@ -19,6 +20,7 @@ public class DeathCoordinate extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PlayerEvents(),this);
+        getCommand("getDeaths").setExecutor(new getDeathsCommand());
         LoadConfig();
         sendMessage("Death plugin enabled!", ChatColor.GREEN);
     }
