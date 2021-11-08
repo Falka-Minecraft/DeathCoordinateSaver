@@ -18,7 +18,6 @@ public class getDeathsCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] strings) {
         if(sender instanceof Player){
             Player player = (Player)sender;
-            player.sendMessage("Command recived");
             int lastId=0;
             while (plugin.getConfig().getString("Users." + player.getUniqueId()+".Death"+lastId)!=null){
                 lastId++;
@@ -36,6 +35,9 @@ public class getDeathsCommand implements CommandExecutor {
                 String y = ms.getString("Y");
                 String z = ms.getString("Z");
                 player.sendMessage( ChatColor.AQUA + "" + i+ ". World: " + World_Name + "; X: " + x+ " Y: " + y + " Z: " + z);
+            }
+            if(lastId==0){
+                player.sendMessage(ChatColor.LIGHT_PURPLE+"You didn't die");
             }
             return true;
         }

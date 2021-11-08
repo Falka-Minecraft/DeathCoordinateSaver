@@ -1,6 +1,6 @@
 name: DeathCoordinate
 main: com.Feshior.DeathCoordinate.DeathCoordinate
-version: 2.0
+version: 2.01
 author: Feshior
 api-version: 1.17
 commands:
