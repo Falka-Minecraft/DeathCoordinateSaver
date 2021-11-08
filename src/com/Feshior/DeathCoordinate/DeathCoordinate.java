@@ -5,6 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.sql.Connection;
+
 public class DeathCoordinate extends JavaPlugin {
     ConsoleCommandSender cms;
     private void sendMessage(String message, ChatColor c){
@@ -17,6 +19,7 @@ public class DeathCoordinate extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PlayerEvents(),this);
+        LoadConfig();
         sendMessage("Death plugin enabled!", ChatColor.GREEN);
     }
     @Override
@@ -24,5 +27,14 @@ public class DeathCoordinate extends JavaPlugin {
         sendMessage("Plugin disabled!", ChatColor.RED);
     }
 
+
+    public void LoadConfig() {
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+    }
+    public void SqlSetup(){
+
+
+    }
 
 }
